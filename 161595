@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="F:\Titiksha's Project\scriptfile.js"></script
+<head>
+<body>
+<div style="width:120px; margin: 0 auto;">
+<h2>Login</h2>
+<form name="fname" action="" method="post">
+User Name<br><br><input type="text" id="uname" name="username"><br><br>
+Password<br><br><input type="password" id="passwo" name="pass" onkeyup="checkuserdata()" ><br><br>
+</div>
+<div style="width:60px; margin: 0 auto;">
+<button type="submit" id="butta"   disabled>"Login"</button><br><br>
+<button style="padding: 0;border: none;background: none;">Register ?</button>
+</form>
+</div>
+<p id="check"></p>
+</body>
+</html> 
