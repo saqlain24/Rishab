@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function showname(){
+	document.getElementById("userna").innerHTML=sessionStorage.getItem("username");
+}
+</script>
+</head>
+<body onload="showname()">
+<div style="width:200px; margin: 0 auto;">
+<p id="userna"></p><br><br>
+<h2>Math Game</h2><br>
+<button onclick="window.location.href='play.html'" >Play</button><br><br>
+<button onclick="window.location.href=''" >High Score</button>
+</div>
+</body>
+</html>
