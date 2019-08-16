@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="F:\Titiksha's Project\scriptfile.js"></script>
+</head>
+<body onload="Calculate()">
+<p id="userna"></p>
+Level<p id="level"></p>
+Score<p id="score"></p>
+Q.<p id="question"></p>
+<input id="1" type="radio" name="answer" ><p id="p1"></p>
+<input id="2" type="radio" name="answer" ><p id="p2"></p> 
+<input id="3" type="radio" name="answer" ><p id="p3"></p> 
+<input id="4" type="radio" name="answer" ><p id="p4"></p> 
+<div style="width:200px; margin: 0 auto;">
+<button onclick="Check()" >Submit</button>
+</div>
+</body>
+</html>

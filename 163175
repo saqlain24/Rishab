@@ -1,0 +1,101 @@
+function myfunction3(){
+	var username=document.getElementById("un").value
+	var pass=document.getElementById("pass").value
+	var rpass=document.getElementById("rpass").value
+  if(username.length>6 && /^[a-zA-z]+$/.test(username) && pass.length>=6 && pass.length<=13 && pass==rpass ){
+	document.getElementById("butt").disabled=false;
+  }
+}
+function saveuserdata(){
+	
+	var username=document.getElementById("un").value
+	var pass=document.getElementById("pass").value
+	if (typeof(Storage) !== "undefined") {
+		localStorage.setItem(username,pass);
+	} else {
+		alert("no support")
+	}
+}
+function checkuserdata(){
+	var username=document.getElementById("uname").value
+	var pass=document.getElementById("passwo").value
+	if(localStorage.getItem(username)==pass){
+			document.getElementById("butta").disabled=false
+		}
+		
+}
+function savesession(){
+	
+	var username=document.getElementById("uname").value
+	sessionStorage.setItem("username",username)
+	
+}
+function clearsession(){
+	sessionStorage.removeItem("usename");
+	
+}
+
+	var res=0;
+	function Calculate(){
+		
+	if (sessionStorage.level && sessionStorage.score) {
+		sessionStorage.level = Number(sessionStorage.level) + 1;
+		sessionStorage.score = Number(sessionStorage.score) + 1;
+	} else {
+		sessionStorage.level = 1;
+		sessionStorage.score = 1;
+
+	}
+	var a=Math.floor(Math.random()*10)
+	var b=Math.floor(Math.random()*10)
+	var arr=['+','/','-','*'];
+	var operator=Math.floor(Math.random()*4)
+	document.getElementById("userna").innerHTML=sessionStorage.getItem("username")
+	document.getElementById("level").innerHTML=sessionStorage.level
+	document.getElementById("score").innerHTML=sessionStorage.score
+	document.getElementById("question").innerHTML=a +" "+arr[operator]+" "+b+"?"
+	var c=a+b;
+	document.getElementById("p1").innerHTML=c.toString()
+	document.getElementById("p2").innerHTML=a-b.toString()
+	document.getElementById("p3").innerHTML=a/b.toString()
+	document.getElementById("p4").innerHTML=a*b.toString()
+	document.getElementById("1").value=c.toString()
+	document.getElementById("2").value=a-b.toString()
+	document.getElementById("3").value=a/b.toString()
+	document.getElementById("4").value=a*b.toString()
+	switch(operator){
+		case 0 : res=a+b;break;
+		case 1 : res=a/b;break;
+		case 2 : res=a-b;break;
+		case 3 : res=a*b;break;
+		}
+	}
+	function Check(){
+		var answer=""
+		if (document.getElementById('1').checked) {
+			answer = document.getElementById('1').value;
+		}
+		else if (document.getElementById('2').checked) {
+			answer = document.getElementById('2').value;
+		}
+		else if (document.getElementById('3').checked) {
+			answer = document.getElementById('3').value;
+		}
+		else if (document.getElementById('4').checked) {
+			answer = document.getElementById('4').value;
+		}
+		var answerno=answer.toString()
+		if(answerno==res){
+			Calculate();
+		}
+		else{
+			sessionStorage.level = 0;
+			sessionStorage.score = 0;
+			Calculate();
+			
+		}
+	}
+
+	
+	
+	
