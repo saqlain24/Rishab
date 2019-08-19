@@ -1,0 +1,48 @@
+ <html>
+     <head></head>
+     <title></title>
+         <body onload="playGame()">
+             <h1>Math Quiz</h1>
+    <h3>Username:<label id="u"></label></h3>
+    <h3>Score:<label id="score"></label></h3>
+   
+    <p id="ques"></p>
+    
+
+      
+      <input id="opt0" type="radio" name="r1" value="0"><p id="p1" ></p>
+      <input id="opt1" type="radio" name="r1" value="1"><p id="p2"></p>
+      <input id="opt2" type="radio" name="r1" value="2"><p id="p3"></p>
+      <input id="opt3" type="radio" name="r1" value="3"><p id="p4"></p>
+
+    <br>
+
+      <input type="button" value="submit"  onclick="playGame()">
+
+  
+  
+</body>
+
+<script>
+var op=['/','+','-','*'];
+function playGame() {
+  
+   
+    var num1=Math.floor((Math.random() * 100) + 1);
+    var num2=Math.floor((Math.random() * 100) + 1);
+    var v3=Math.floor((Math.random() * 3));
+    document.getElementById("ques").innerHTML = num1;
+
+
+  /*  document.getElementById("c1").innerHTML = opt[0];
+    document.getElementById("c2").innerHTML = opt[1];
+    document.getElementById("c3").innerHTML = opt[2];
+    document.getElementById("c4").innerHTML = opt[3];
+    ans=eval((v1+""+operator[v3]+""+v2)).toFixed(2);
+*/
+
+
+
+</script>
+
+</html>
